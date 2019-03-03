@@ -59,6 +59,7 @@ parser.add_argument('--powerlineextra', dest='powerlineextra', action='store_tru
 parser.add_argument('--material', '--materialdesignicons', '--mdi', dest='material', action='store_true', help='Add Material Design Icons (https://github.com/templarian/MaterialDesign)', default=False)
 parser.add_argument('--weather', '--weathericons', dest='weather', action='store_true', help='Add Weather Icons (https://github.com/erikflowers/weather-icons)', default=False)
 parser.add_argument('--custom', type=str, nargs='?', dest='custom', help='Specify a custom symbol font. All new glyphs will be copied, with no scaling applied.', default=False)
+parser.add_argument('--custom2', type=str, nargs='?', dest='custom2', help='Specify a second custom symbol font. All new glyphs will be copied, with no scaling applied.', default=False)
 parser.add_argument('--postprocess', type=str, nargs='?', dest='postprocess', help='Specify a Script for Post Processing', default=False)
 parser.add_argument('--removeligs', '--removeligatures', dest='removeligatures', action='store_true', help='Removes ligatures specificed in JSON configuration file', default=False)
 parser.add_argument('--configfile', type=str, nargs='?', dest='configfile', help='Specify a file path for JSON configuration file (see sample: src/config.sample.json)', default=False)
@@ -421,6 +422,7 @@ PATCH_SET = [
     { 'Enabled': args.material,             'Name': "Material", 'Filename': "materialdesignicons-webfont.ttf",                'Exact': False,  'SymStart': 0xF001, 'SymEnd': 0xF847, 'SrcStart': 0xF500, 'SrcEnd': 0xFD46, 'ScaleGlyph': None, 'Attributes': SYM_ATTR_DEFAULT },
     { 'Enabled': args.weather,             'Name': "Weather Icons", 'Filename': "weathericons-regular-webfont.ttf",                'Exact': False,  'SymStart': 0xF000, 'SymEnd': 0xF0EB, 'SrcStart': 0xE300, 'SrcEnd': 0xE3EB, 'ScaleGlyph': None, 'Attributes': SYM_ATTR_DEFAULT },
     { 'Enabled': args.custom,               'Name': "Custom", 'Filename': args.custom,                   'Exact': True,  'SymStart': 0x0000, 'SymEnd': 0x0000, 'SrcStart': 0x0000, 'SrcEnd': 0x0000, 'ScaleGlyph': None, 'Attributes': CUSTOM_ATTR },
+    { 'Enabled': args.custom2,               'Name': "Custom2", 'Filename': args.custom2,                   'Exact': True,  'SymStart': 0x0000, 'SymEnd': 0x0000, 'SrcStart': 0x0000, 'SrcEnd': 0x0000, 'ScaleGlyph': None, 'Attributes': CUSTOM_ATTR },
 ]
 
 # win_ascent and win_descent are used to set the line height for windows fonts.
